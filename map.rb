@@ -1,6 +1,5 @@
-require '.\player'
-require '.\cell'
-require '.\treasure'
+require './player'
+require './cell'
 
 class Map
     def initialize (size)
@@ -45,7 +44,7 @@ class Map
         end
     end
 
-    def add_treasure (row, col)
-        @map[row][col] = Treasure.new
+    def add_cell (cell, row, col)
+        @map[row][col] = cell
     end
 end

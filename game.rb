@@ -1,12 +1,20 @@
 require './map'
+require './treasure'
+require './wall'
 require 'io/console'
 
 map_size = 20
 
 map = Map.new(map_size)
 
-map.add_treasure(7, 7)
-map.add_treasure(14, 14)
+map.add_cell(Treasure.new, 7, 7)
+map.add_cell(Treasure.new, 14, 14)
+
+map.add_cell(Wall.new, 3, 3)
+map.add_cell(Wall.new, 3, 4)
+map.add_cell(Wall.new, 12, 17)
+map.add_cell(Wall.new, 14, 15)
+
 
 player = Player.new(map_size / 2, map_size / 2)
 
